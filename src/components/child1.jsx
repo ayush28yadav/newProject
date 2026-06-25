@@ -1,10 +1,10 @@
 import Child2 from "./child2";
 
-function Child1({name, rollno}){
+function Child1(){
     return(
         <div>
-            <h1>{name}</h1>
-           <Child2 name = {name} rollno = {rollno}/>
+            <h1></h1>
+           <Child2 />
         </div>
     )
 }

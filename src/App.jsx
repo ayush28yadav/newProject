@@ -6,6 +6,7 @@ import './App.css'
 //import Counter from './components/Counter'
 import Child1 from './components/child1'
 import Cards from './components/Cards'
+import UserContext from "./UserContext"
 
 function App() {
 //   const [info, setInfo] = useState([{name: "Ayush",
@@ -25,11 +26,17 @@ const rollno = 21;
 
   return (
     <>
-    <Child1 name = {name} rollno = {rollno}/>
-     {/* <Child1 name = {info[0].name}  rollno = {info[0].rollno}/> */}
-   {/* {info.map((item, index) => (
-    <Cards key={index} name = {item.name} age = {item.rollno}/>
-   ))} */}
+
+    {/* providing context  */}
+    <UserContext.Provider value={{ name, rollno }}>
+      <Child1 />
+      {/*
+        <Child1 name={info[0].name} rollno={info[0].rollno} />
+        {info.map((item, index) => (
+          <Cards key={index} name={item.name} age={item.rollno} />
+        ))}
+      */}
+    </UserContext.Provider>
     </>
   )
 }
